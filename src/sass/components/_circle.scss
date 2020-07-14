@@ -1,0 +1,12 @@
+.circle {
+  flex: 1;
+  display: flex;
+  align-items: center;
+
+  &__inner {
+    width: 22.5rem;
+    height: 22.5rem;
+    background-color: rgba(#000, 0.1);
+    border-radius: 50%;
+  }
+}

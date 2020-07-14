@@ -1,0 +1,44 @@
+.header {
+  width: 100%;
+  max-width: 70rem;
+  margin: auto;
+  padding: 1.8rem 2.5rem 1.8rem 3rem;
+  border-radius: 15px;
+  border: 3px solid rgba(#fff, 0.29);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  height: 9.3rem;
+}
+
+.score-box {
+  height: 11.4rem;
+  width: 15rem;
+  border-radius: 10px;
+  background-color: #fff;
+  position: relative;
+
+  &__content {
+    @include absCenter;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__title {
+    text-transform: uppercase;
+    font-weight: 600;
+    color: $color-blue;
+    font-size: 1.8rem;
+    letter-spacing: 3px;
+  }
+
+  &__number {
+    color: $color-dark;
+    font-size: 6.5rem;
+    line-height: 1;
+  }
+}
