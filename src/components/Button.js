@@ -20,9 +20,7 @@ const Button = props => {
             display: props.right ? "flex" : null,
             justifyContent: props.right ? "flex-end" : null
         }}>
-            <div className={classes.join(" ")} onClick={props.clicked} style={{
-                marginLeft: props.right ? "auto" : null
-            }}>
+            <div className={classes.join(" ")} onClick={props.clicked}>
                 {props.text}
             </div>
         </div>

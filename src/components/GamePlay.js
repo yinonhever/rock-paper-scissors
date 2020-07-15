@@ -17,15 +17,10 @@ const GamePlay = props => {
 
         setTimeout(() => {
             setShowResult(true);
-        }, 2000)
-    }, [])
-
-    useEffect(() => {
-        if (showResult) {
             if (props.result === "win") { setUserWon(true) };
             if (props.result === "lose") { setHouseWon(true) };
-        }
-    }, [showResult, props.result])
+        }, 2000)
+    }, [props.result])
 
     let resultText = "";
     if (props.result === "win") { resultText = "You win" };

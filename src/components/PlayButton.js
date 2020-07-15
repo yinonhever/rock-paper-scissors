@@ -17,12 +17,7 @@ const PlayButton = props => {
     }
 
     useEffect(() => {
-        if (props.highlighted) {
-            setHighlighted(true);
-        }
-        else {
-            setHighlighted(false)
-        }
+        setHighlighted(props.highlighted);
     }, [props.highlighted])
 
     const clickHandler = () => {
