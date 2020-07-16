@@ -10,7 +10,7 @@
   opacity: 0;
   transition: opacity 0.5s;
 
-  @include respond(mobile) {
+  @include respond(mobile-land) {
     height: auto;
     min-height: 100%;
   }
@@ -31,7 +31,7 @@
     opacity: 0;
     transition: all 0.5s;
 
-    @include respond(mobile) {
+    @include respond(mobile-land) {
       border-radius: 0;
       top: 0;
       left: 0;
@@ -48,7 +48,7 @@
     transform: translate(-50%, -50%) scale(1);
     opacity: 1;
 
-    @include respond(mobile) {
+    @include respond(mobile-land) {
       transform: none;
     }
   }
@@ -60,7 +60,7 @@
     margin-bottom: 4.8rem;
     color: $color-dark;
 
-    @include respond(mobile) {
+    @include respond(mobile-land) {
       justify-content: center;
       margin-bottom: 11.3rem;
     }
@@ -73,7 +73,7 @@
   }
 
   &__img {
-    @include respond(mobile) {
+    @include respond(mobile-land) {
       width: 100%;
       max-width: 30.5rem;
     }
@@ -89,7 +89,7 @@
       opacity: 0.75;
     }
 
-    @include respond(mobile) {
+    @include respond(mobile-land) {
       position: absolute;
       top: 100%;
       left: 50%;
