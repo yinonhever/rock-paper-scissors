@@ -5,6 +5,10 @@
   align-items: center;
   position: relative;
 
+  @include respond(tablet) {
+    margin: 10.5rem auto 14rem;
+  }
+
   &__top {
     display: flex;
     align-items: center;
@@ -12,10 +16,64 @@
 
     .play-button:first-child {
       margin-right: 8rem;
+      animation: fadeFromLeft 0.6s;
+    }
+    
+    .play-button:last-child {
+      animation: fadeFromRight 0.6s;
+    }
+  }
+
+  &__bottom {
+    .play-button {
+      animation: fadeFromBottom 0.6s;
     }
   }
 
   &__triangle {
     position: absolute;
+    top: calc(#{$play-button-height} / 2);
+    text-align: center;
+    z-index: -1;
+
+    img {
+      width: 100%;
+    }
+  }
+}
+
+@keyframes fadeFromLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeFromRight {
+  0% {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeFromBottom {
+  0% {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate(0);
   }
 }

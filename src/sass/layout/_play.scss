@@ -3,6 +3,15 @@
   display: flex;
   justify-content: center;
   align-items: stretch;
+  position: relative;
+
+  @include respond(tablet) {
+    margin: 9.9rem 0 24.5rem;
+  }
+
+  @include respond(mobile) {
+    justify-content: space-between;
+  }
 
   &__column {
     display: flex;

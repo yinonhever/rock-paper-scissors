@@ -21,14 +21,14 @@ const PlayButton = props => {
     }, [props.highlighted])
 
     const clickHandler = () => {
-        if(props.clickable) {
+        if (props.clicked) {
             props.clicked(props.type);
         }
     }
 
     return (
         <div className={classes.join(" ")} onClick={clickHandler} style={{
-            cursor: props.clickable ? "pointer" : null
+            cursor: props.clicked ? "pointer" : null
         }}>
             <div className="play-button__inner">
                 <img className="play-button__icon" src={icon} alt={props.type} />

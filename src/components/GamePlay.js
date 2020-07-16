@@ -9,6 +9,7 @@ const GamePlay = props => {
     const [showResult, setShowResult] = useState(false);
     const [userWon, setUserWon] = useState(false);
     const [houseWon, setHouseWon] = useState(false);
+    const [columnMargin, setColumnMargin] = useState(null)
 
     useEffect(() => {
         setTimeout(() => {
@@ -27,9 +28,27 @@ const GamePlay = props => {
     if (props.result === "lose") { resultText = "You lose" };
     if (props.result === "draw") { resultText = "Draw" };
 
+    useEffect(() => {
+        const adjustColumnMargin = () => {
+            if (window.innerWidth > 1100) {
+                setColumnMargin(showResult ? 0 : "7.3rem");
+            }
+            else {
+                if (window.innerWidth <= 750) {
+                    setColumnMargin(0);
+                }
+                else {
+                    setColumnMargin("5.9rem");
+                }
+            }
+        }
+        adjustColumnMargin();
+        window.addEventListener("resize", adjustColumnMargin)
+    }, [showResult])
+
     return (
         <section className="play">
-            <div className="play__column" style={{ marginRight: showResult ? 0 : "7.3rem" }}>
+            <div className="play__column" style={{ marginRight: columnMargin }}>
                 <h2 className="play__heading">You picked</h2>
                 <Zoom duration={600}>
                     <PlayButton big type={props.userPick} highlighted={userWon} />

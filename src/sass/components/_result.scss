@@ -5,6 +5,13 @@
   align-items: center;
   z-index: 10;
 
+  @include respond(tablet) {
+    margin: 0;
+    width: 100%;
+    position: absolute;
+    top: calc(100% + 6.2rem);
+  }
+
   &__text {
     font-size: 5.6rem;
     text-transform: uppercase;

@@ -15,11 +15,16 @@ const Button = props => {
         classes = [...classes, "button--white"];
     }
 
+    let containerClasses = ["button-container"];
+    if (props.right) {
+        containerClasses = [...containerClasses, "right"];
+    }
+    if (props.centerMobile) {
+        containerClasses = [...containerClasses, "center-mobile"];
+    }
+
     return (
-        <div style={{
-            display: props.right ? "flex" : null,
-            justifyContent: props.right ? "flex-end" : null
-        }}>
+        <div className={containerClasses.join(" ")}>
             <div className={classes.join(" ")} onClick={props.clicked}>
                 {props.text}
             </div>

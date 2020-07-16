@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import usePersistedState from "../usePersistedState";
 import Header from "./Header";
 import GameInitial from "./GameInitial";
 import GamePlay from "./GamePlay";
@@ -6,19 +7,18 @@ import Button from "./Button";
 import Rules from "./Rules";
 
 const Game = () => {
-    const [score, setScore] = useState(0);
+    const [score, setScore] = usePersistedState("score", 0);
     const [started, setStarted] = useState(false);
     const [userPick, setUserPick] = useState(null);
     const [housePick, setHousePick] = useState(null);
     const [result, setResult] = useState(null);
     const [modalActive, setModalActive] = useState(false);
 
-    const options = ["rock", "paper", "scissors"];
-
     const gamePlayHandler = newUserPick => {
         setStarted(true);
         setUserPick(newUserPick);
 
+        const options = ["rock", "paper", "scissors"];
         const random = Math.floor(Math.random() * 3);
         const newHousePick = options[random];
         setHousePick(newHousePick);
@@ -33,9 +33,6 @@ const Game = () => {
 
     const restartHandler = () => {
         setStarted(false);
-        setUserPick(null);
-        setHousePick(null);
-        setResult(null);
     }
 
     const modalHandler = () => {
@@ -72,7 +69,7 @@ const Game = () => {
                     result={result}
                     onRestart={restartHandler}
                 />}
-            <Button small transparent right text="Rules" clicked={modalHandler} />
+            <Button small transparent right centerMobile text="Rules" clicked={modalHandler} />
             <Rules active={modalActive} closed={modalHandler} />
         </main>
     )

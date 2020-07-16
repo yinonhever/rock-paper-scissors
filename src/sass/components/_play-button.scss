@@ -1,6 +1,9 @@
+$play-button-width: 19.8rem;
+$play-button-height: 20.3rem;
+
 .play-button {
-  width: 19.8rem;
-  height: 20.3rem;
+  width: $play-button-width;
+  height: $play-button-height;
   border-radius: 50%;
   box-shadow: 0 3px 3px 0 rgba(#000, 0.2);
   position: relative;
