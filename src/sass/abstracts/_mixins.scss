@@ -5,13 +5,18 @@
     }
   }
 
-  @if $breakpoint == mobile {
+  @if $breakpoint == mobile-land {
     @media only screen and (max-width: 750px) {
       @content;
     }
   }
-}
 
+  @if $breakpoint == mobile {
+    @media only screen and (max-width: 600px) {
+      @content;
+    }
+  }
+}
 
 @mixin absCenter {
   position: absolute;

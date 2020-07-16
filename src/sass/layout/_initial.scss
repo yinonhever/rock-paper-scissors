@@ -14,9 +14,19 @@
     align-items: center;
     margin-bottom: 2.4rem;
 
+    @include respond(mobile) {
+      justify-content: space-between;
+      width: 100%;
+      margin-bottom: 4.2vw;
+    }
+
     .play-button:first-child {
       margin-right: 8rem;
       animation: fadeFromLeft 0.6s;
+
+      @include respond(mobile) {
+        margin-right: 0;
+      }
     }
     
     .play-button:last-child {
@@ -25,6 +35,11 @@
   }
 
   &__bottom {
+    @include respond(mobile) {
+      display: flex;
+      justify-content: center;
+    }
+
     .play-button {
       animation: fadeFromBottom 0.6s;
     }
@@ -35,6 +50,12 @@
     top: calc(#{$play-button-height} / 2);
     text-align: center;
     z-index: -1;
+
+    @include respond(mobile) {
+      top: calc(#{$play-button-height-mobile} / 2);
+      left: calc(#{$play-button-width-mobile} / 2);
+      right: calc(#{$play-button-width-mobile} / 2);
+    }
 
     img {
       width: 100%;

@@ -3,4 +3,8 @@
   width: 100%;
   height: auto;
   overflow: hidden;
+
+  @include respond(mobile) {
+    padding: 3.2rem 3.2rem 5.6rem;
+  }
 }

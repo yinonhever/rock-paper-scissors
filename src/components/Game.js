@@ -1,10 +1,12 @@
 import React, { useState } from "react";
 import usePersistedState from "../usePersistedState";
+import Auxilliary from "../hoc/Auxilliary";
 import Header from "./Header";
 import GameInitial from "./GameInitial";
 import GamePlay from "./GamePlay";
 import Button from "./Button";
 import Rules from "./Rules";
+import Auxiliiary from "../hoc/Auxilliary";
 
 const Game = () => {
     const [score, setScore] = usePersistedState("score", 0);
@@ -60,18 +62,20 @@ const Game = () => {
     }
 
     return (
-        <main className="game">
-            <Header score={score} />
-            {!started ? <GameInitial onPick={gamePlayHandler} /> :
-                <GamePlay
-                    userPick={userPick}
-                    housePick={housePick}
-                    result={result}
-                    onRestart={restartHandler}
-                />}
-            <Button small transparent right centerMobile text="Rules" clicked={modalHandler} />
+        <Auxiliiary>
+            <main className="game">
+                <Header score={score} />
+                {!started ? <GameInitial onPick={gamePlayHandler} /> :
+                    <GamePlay
+                        userPick={userPick}
+                        housePick={housePick}
+                        result={result}
+                        onRestart={restartHandler}
+                    />}
+                <Button small transparent right centerMobile text="Rules" clicked={modalHandler} />
+            </main>
             <Rules active={modalActive} closed={modalHandler} />
-        </main>
+        </Auxiliiary>
     )
 }
 

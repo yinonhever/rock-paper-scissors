@@ -7,6 +7,7 @@ import Result from "./Result";
 const GamePlay = props => {
     const [showHousePick, setShowHousePick] = useState(false);
     const [showResult, setShowResult] = useState(false);
+    const [resultText, setResultText] = useState(null);
     const [userWon, setUserWon] = useState(false);
     const [houseWon, setHouseWon] = useState(false);
     const [columnMargin, setColumnMargin] = useState(null)
@@ -18,15 +19,19 @@ const GamePlay = props => {
 
         setTimeout(() => {
             setShowResult(true);
-            if (props.result === "win") { setUserWon(true) };
-            if (props.result === "lose") { setHouseWon(true) };
+            if (props.result === "win") {
+                setResultText("You win");
+                setUserWon(true);
+            }
+            if (props.result === "lose") {
+                setResultText("You lose");
+                setHouseWon(true);
+            }
+            if (props.result === "draw") {
+                setResultText("Draw");
+            }
         }, 2000)
     }, [props.result])
-
-    let resultText = "";
-    if (props.result === "win") { resultText = "You win" };
-    if (props.result === "lose") { resultText = "You lose" };
-    if (props.result === "draw") { resultText = "Draw" };
 
     useEffect(() => {
         const adjustColumnMargin = () => {
@@ -43,7 +48,7 @@ const GamePlay = props => {
             }
         }
         adjustColumnMargin();
-        window.addEventListener("resize", adjustColumnMargin)
+        window.addEventListener("resize", adjustColumnMargin);
     }, [showResult])
 
     return (

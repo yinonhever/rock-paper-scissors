@@ -1,5 +1,7 @@
 $play-button-width: 19.8rem;
 $play-button-height: 20.3rem;
+$play-button-width-mobile: 34.5vw;
+$play-button-height-mobile: 35.4vw;
 
 .play-button {
   width: $play-button-width;
@@ -7,6 +9,11 @@ $play-button-height: 20.3rem;
   border-radius: 50%;
   box-shadow: 0 3px 3px 0 rgba(#000, 0.2);
   position: relative;
+
+  @include respond(mobile) {
+    width: $play-button-width-mobile;
+    height: $play-button-height-mobile;
+  }
 
   &::before {
     content: "";
@@ -16,6 +23,10 @@ $play-button-height: 20.3rem;
     width: 100%;
     height: calc(100% - 0.9rem);
     border-radius: 50%;
+
+    @include respond(mobile) {
+      height: calc(100% - 0.59rem);
+    }
   }
 
   &::after {
@@ -84,7 +95,14 @@ $play-button-height: 20.3rem;
     border-radius: 50%;
     z-index: 1;
 
-    &::after {
+    @include respond(mobile) {
+      height: calc(#{$play-button-height-mobile} * 75 / 100);
+      width: calc(#{$play-button-height-mobile} * 75 / 100);
+      top: 11.3%;
+      left: 11.6%;
+    }
+
+    &::before {
       content: "";
       position: absolute;
       left: 0;
@@ -93,6 +111,10 @@ $play-button-height: 20.3rem;
       width: 100%;
       height: calc(100% - 0.9rem);
       background: linear-gradient(to top, #dadada, #f3f3f3);
+
+      @include respond(mobile) {
+        height: calc(100% - 0.52rem);
+      }
     }
   }
 
@@ -111,14 +133,22 @@ $play-button-height: 20.3rem;
     @include absCenter;
     height: 8rem;
     z-index: 1;
-  }
 
-  &.big &__icon {
-    height: 11.8rem;
+    @include respond(mobile) {
+      height: 52.6%;
+    }
   }
 
   &.rock &__icon {
     height: 6.4rem;
+
+    @include respond(mobile) {
+      height: 42.1%;
+    }
+  }
+
+  &.big &__icon {
+    height: 11.8rem;
   }
 
   &.rock.big &__icon {
