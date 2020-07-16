@@ -8,5 +8,10 @@
     height: 22.5rem;
     background-color: rgba(#000, 0.1);
     border-radius: 50%;
+    
+    @include respond(mobile-land) {
+      width: 29vw;
+      height: 29vw;
+    }
   }
 }

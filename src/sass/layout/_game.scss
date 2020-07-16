@@ -5,6 +5,6 @@
   overflow: hidden;
 
   @include respond(mobile) {
-    padding: 3.2rem 3.2rem 5.6rem;
+    padding: 3.2rem 0 5.6rem;
   }
 }

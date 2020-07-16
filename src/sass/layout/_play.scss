@@ -6,10 +6,10 @@
   position: relative;
 
   @include respond(tablet) {
-    margin: 9.9rem 0 24.5rem;
+    margin: 9.9rem 0 29.5rem;
   }
 
-  @include respond(mobile) {
+  @include respond(mobile-land) {
     justify-content: space-between;
   }
 
@@ -18,6 +18,11 @@
     flex-direction: column;
     align-items: center;
     width: 29.3rem;
+    position: relative;
+
+    @include respond(tablet) {
+      width: 50%;
+    }
   }
 
   &__heading {
@@ -27,5 +32,21 @@
     line-height: 1.333;
     margin-bottom: 6.3rem;
     z-index: 10;
+
+    @include respond(tablet) {
+      position: absolute;
+      top: calc(100% + 1.75rem);
+      left: 50%;
+      transform: translateX(-50%);
+      width: 150%;
+      text-align: center;
+      margin-bottom: 0;
+    }
+
+    @include respond(mobile) {
+      font-size: 1.5rem;
+      letter-spacing: 1.88px;
+      line-height: 2.133;
+    }
   }
 }

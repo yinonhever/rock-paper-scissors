@@ -9,6 +9,10 @@
     margin: 10.5rem auto 14rem;
   }
 
+  @include respond(mobile) {
+    width: calc(100% - 6.4rem);
+  }
+
   &__top {
     display: flex;
     align-items: center;

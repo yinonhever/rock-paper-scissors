@@ -12,6 +12,7 @@
   @include respond(mobile) {
     padding: 1.2rem 1.2rem 1.2rem 2.3rem;
     border-radius: 5px;
+    width: calc(100% - 6.4rem);
   }
 }
 

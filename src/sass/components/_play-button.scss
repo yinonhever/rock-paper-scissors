@@ -3,6 +3,18 @@ $play-button-height: 20.3rem;
 $play-button-width-mobile: 34.5vw;
 $play-button-height-mobile: 35.4vw;
 
+@mixin mobileDimensions {
+  width: $play-button-width-mobile;
+  height: $play-button-height-mobile;
+}
+
+@mixin mobileInnerDimensions {
+  height: calc(#{$play-button-height-mobile} * 75 / 100);
+  width: calc(#{$play-button-height-mobile} * 75 / 100);
+  top: 11.3%;
+  left: 11.6%;
+}
+
 .play-button {
   width: $play-button-width;
   height: $play-button-height;
@@ -11,8 +23,7 @@ $play-button-height-mobile: 35.4vw;
   position: relative;
 
   @include respond(mobile) {
-    width: $play-button-width-mobile;
-    height: $play-button-height-mobile;
+    @include mobileDimensions;
   }
 
   &::before {
@@ -52,8 +63,17 @@ $play-button-height-mobile: 35.4vw;
     width: 29.3rem;
     height: 30rem;
 
+    @include respond(mobile-land) {
+      width: $play-button-width-mobile;
+      height: $play-button-height-mobile;
+    }
+
     &::before {
       height: calc(100% - 1.3rem);
+
+      @include respond(mobile-land) {
+        height: calc(100% - 0.59rem);
+      }
     }
 
     &::after {
@@ -96,10 +116,7 @@ $play-button-height-mobile: 35.4vw;
     z-index: 1;
 
     @include respond(mobile) {
-      height: calc(#{$play-button-height-mobile} * 75 / 100);
-      width: calc(#{$play-button-height-mobile} * 75 / 100);
-      top: 11.3%;
-      left: 11.6%;
+      @include mobileInnerDimensions;
     }
 
     &::before {
@@ -124,8 +141,16 @@ $play-button-height-mobile: 35.4vw;
     top: 3.4rem;
     left: 3.4rem;
 
-    &::after {
+    @include respond(mobile-land) {
+      @include mobileInnerDimensions;
+    }
+
+    &::before {
       height: calc(100% - 1.1rem);
+
+      @include respond(mobile-land) {
+        height: calc(100% - 0.52rem);
+      }
     }
   }
 
@@ -149,10 +174,18 @@ $play-button-height-mobile: 35.4vw;
 
   &.big &__icon {
     height: 11.8rem;
+
+    @include respond(mobile-land) {
+      height: 52.6%;
+    }
   }
 
   &.rock.big &__icon {
     height: 9.5rem;
+
+    @include respond(mobile-land) {
+      height: 42.1%;
+    }
   }
 
   &__backdrop {
@@ -160,6 +193,11 @@ $play-button-height-mobile: 35.4vw;
     width: 53.4vw;
     background-color: rgba(#fff, 0.02);
     z-index: -1;
+
+    @include respond(tablet) {
+      height: 75.7vw;
+      width: 76.8vw;
+    }
 
     &,
     &::before,
