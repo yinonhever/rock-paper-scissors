@@ -193,6 +193,7 @@ $play-button-height-mobile: 35.4vw;
     width: 53.4vw;
     background-color: rgba(#fff, 0.02);
     z-index: -1;
+    animation: zoomInAbsolute 0.7s ease-out;
 
     @include respond(tablet) {
       height: 75.7vw;
@@ -219,5 +220,17 @@ $play-button-height-mobile: 35.4vw;
       height: 60%;
       background-color: rgba(#fff, 0.05);
     }
+  }
+}
+
+@keyframes zoomInAbsolute {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
   }
 }

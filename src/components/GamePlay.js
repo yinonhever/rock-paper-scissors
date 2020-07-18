@@ -10,7 +10,7 @@ const GamePlay = props => {
     const [resultText, setResultText] = useState(null);
     const [userWon, setUserWon] = useState(false);
     const [houseWon, setHouseWon] = useState(false);
-    const [columnMargin, setColumnMargin] = useState(null)
+    const [columnMargin, setColumnMargin] = useState(null);
 
     useEffect(() => {
         setTimeout(() => {
