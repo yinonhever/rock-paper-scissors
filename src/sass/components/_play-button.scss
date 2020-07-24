@@ -21,6 +21,11 @@ $play-button-height-mobile: 35.4vw;
   border-radius: 50%;
   box-shadow: 0 3px 3px 0 rgba(#000, 0.2);
   position: relative;
+  transition: transform 0.4s;
+  
+  &:not(.big):hover {
+    transform: scale(1.2);
+  }
 
   @include respond(mobile) {
     @include mobileDimensions;
@@ -51,7 +56,7 @@ $play-button-height-mobile: 35.4vw;
     border-radius: 50%;
     visibility: hidden;
     opacity: 0;
-    transition: all 0.6s;
+    transition: all 0.4s;
   }
 
   &:hover::after {
