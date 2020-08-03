@@ -1,15 +1,22 @@
 .result {
-  margin: 16rem 7rem 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  position: absolute;
+  top: 16rem;
+  left: 50%;
+  transform: translateX(-50%);
   z-index: 10;
 
   @include respond(tablet) {
-    margin: 0;
     width: 100%;
-    position: absolute;
     top: calc(100% + 11.1rem);
+    left: initial;
+    transform: none;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
   }
 
   &__text {

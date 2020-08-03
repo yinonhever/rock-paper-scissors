@@ -36,14 +36,14 @@ const GamePlay = props => {
     useEffect(() => {
         const adjustColumnMargin = () => {
             if (window.innerWidth > 1100) {
-                setColumnMargin(showResult ? 0 : "7.3rem");
+                setColumnMargin(showResult ? "17.6rem" : "3.65rem");
             }
             else {
                 if (window.innerWidth <= 750) {
                     setColumnMargin(0);
                 }
                 else {
-                    setColumnMargin("5.9rem");
+                    setColumnMargin("2.95rem");
                 }
             }
         }
@@ -53,14 +53,20 @@ const GamePlay = props => {
 
     return (
         <section className="play">
-            <div className="play__column" style={{ marginRight: columnMargin }}>
+            <div className="play__column" style={{
+                marginRight: columnMargin,
+                transition: showResult ? "margin-right 0.4s" : null
+            }}>
                 <h2 className="play__heading">You picked</h2>
                 <Zoom duration={600}>
                     <PlayButton big type={props.userPick} highlighted={userWon} />
                 </Zoom>
             </div>
             {showResult ? <Result text={resultText} restart={props.onRestart} /> : null}
-            <div className="play__column">
+            <div className="play__column" style={{
+                marginLeft: columnMargin,
+                transition: showResult ? "margin-left 0.4s" : null
+            }}>
                 <h2 className="play__heading">The house picked</h2>
                 {showHousePick ?
                     <Zoom duration={600}>

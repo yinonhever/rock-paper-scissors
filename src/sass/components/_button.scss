@@ -7,6 +7,7 @@
   letter-spacing: 2.5px;
   display: inline-block;
   cursor: pointer;
+  transition: color 0.25s, background-color 0.5s;
   z-index: 10;
 
   &--small {
@@ -19,19 +20,20 @@
 
   &--transparent {
     &:hover {
-      background: linear-gradient(to top, #f3f3f3, #fff);
+      background-color: #fff;
       color: $color-dark;
     }
   }
 
   &--white {
-    background: linear-gradient(to top, #f3f3f3, #fff);
+    background-color: #fff;
     color: $color-dark;
-    border: none;
+    border: 2px solid #fff;
     box-shadow: 0 3px 3px 0 rgba(#000, 0.2);
 
     &:hover {
-      color: #db2e4d;
+      background-color: transparent;
+      color: #fff;
     }
   }
 }

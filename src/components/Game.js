@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import usePersistedState from "../usePersistedState";
+import usePersistedState from "../utility/usePersistedState";
+import determineResult from "../utility/determineResult";
 import Layout from "../hoc/Layout";
 import Header from "./Header";
 import GameInitial from "./GameInitial";
@@ -20,7 +21,7 @@ const Game = () => {
         setUserPick(newUserPick);
 
         const options = ["rock", "paper", "scissors"];
-        const random = Math.floor(Math.random() * 3);
+        const random = Math.floor(Math.random() * options.length);
         const newHousePick = options[random];
         setHousePick(newHousePick);
 
@@ -29,7 +30,7 @@ const Game = () => {
         setTimeout(() => {
             if (newResult === "win") { setScore(score + 1) };
             if (newResult === "lose") { setScore(score - 1) };
-        }, 2000)
+        }, 2500)
     }
 
     const restartHandler = () => {
@@ -38,26 +39,6 @@ const Game = () => {
 
     const modalHandler = () => {
         setModalActive(!modalActive);
-    }
-
-    const determineResult = (user, house) => {
-        if (user === house) return "draw";
-        else {
-            if (user === "rock") {
-                if (house === "paper") return "lose";
-                else if (house === "scissors") return "win";
-            }
-            else {
-                if (user === "paper") {
-                    if (house === "rock") return "win";
-                    else if (house === "scissors") return "lose";
-                }
-                else if (user === "scissors") {
-                    if (house === "rock") return "lose";
-                    else if (house === "paper") return "win";
-                }
-            }
-        }
     }
 
     return (

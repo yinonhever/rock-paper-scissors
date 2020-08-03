@@ -198,7 +198,8 @@ $play-button-height-mobile: 35.4vw;
     width: 53.4vw;
     background-color: rgba(#fff, 0.02);
     z-index: -1;
-    animation: zoomInAbsolute 0.7s ease-out;
+    animation: zoomInAbsolute 0.7s ease-out 0.1s;
+    animation-fill-mode: backwards;
 
     @include respond(tablet) {
       height: 75.7vw;
