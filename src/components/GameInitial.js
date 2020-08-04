@@ -1,18 +1,33 @@
 import React from "react";
+import Zoom from "react-reveal/Zoom";
 import PlayButton from "./PlayButton";
-import triangle from "../images/bg-triangle.svg";
+import pentagon from "../images/bg-pentagon.svg";
 
 const GameInitial = props => (
     <section className="initial">
         <div className="initial__top">
-            <PlayButton type="paper" clicked={props.onPick} />
-            <PlayButton type="scissors" clicked={props.onPick} />
+            <Zoom duration={200}>
+                <PlayButton type="scissors" clicked={props.onPick} />
+            </Zoom>
+        </div>
+        <div className="initial__middle">
+            <Zoom duration={200} delay={800}>
+                <PlayButton type="spock" clicked={props.onPick} />
+            </Zoom>
+            <Zoom duration={200} delay={200}>
+                <PlayButton type="paper" clicked={props.onPick} />
+            </Zoom>
         </div>
         <div className="initial__bottom">
-            <PlayButton type="rock" clicked={props.onPick} />
+            <Zoom duration={200} delay={600}>
+                <PlayButton type="lizard" clicked={props.onPick} />
+            </Zoom>
+            <Zoom duration={200} delay={400}>
+                <PlayButton type="rock" clicked={props.onPick} />
+            </Zoom>
         </div>
-        <div className="initial__triangle">
-            <img src={triangle} alt="triangle" />
+        <div className="initial__shape">
+            <img src={pentagon} alt="pentagon" />
         </div>
     </section>
 )

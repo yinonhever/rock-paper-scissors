@@ -1,5 +1,5 @@
 import React from "react";
-import rules from "../images/image-rules.svg";
+import rules from "../images/image-rules-bonus.svg";
 
 const Rules = props => (
     <div className={props.active ? "rules active" : "rules"}>

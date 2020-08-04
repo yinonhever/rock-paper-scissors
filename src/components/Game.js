@@ -20,7 +20,7 @@ const Game = () => {
         setStarted(true);
         setUserPick(newUserPick);
 
-        const options = ["rock", "paper", "scissors"];
+        const options = ["rock", "paper", "scissors", "lizard", "spock"];
         const random = Math.floor(Math.random() * options.length);
         const newHousePick = options[random];
         setHousePick(newHousePick);

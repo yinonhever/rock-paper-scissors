@@ -1,7 +1,7 @@
-$play-button-width: 19.8rem;
-$play-button-height: 20.3rem;
-$play-button-width-mobile: 34.5vw;
-$play-button-height-mobile: 35.4vw;
+$play-button-width: 14.5rem;
+$play-button-height: 14.8rem;
+$play-button-width-mobile: 25.6vw;
+$play-button-height-mobile: 25.9vw;
 
 @mixin mobileDimensions {
   width: $play-button-width-mobile;
@@ -10,7 +10,7 @@ $play-button-height-mobile: 35.4vw;
 
 @mixin mobileInnerDimensions {
   height: calc(#{$play-button-height-mobile} * 75 / 100);
-  width: calc(#{$play-button-height-mobile} * 75 / 100);
+  width: calc(#{$play-button-height-mobile} * 75 / 100);;
   top: 11.3%;
   left: 11.6%;
 }
@@ -22,9 +22,9 @@ $play-button-height-mobile: 35.4vw;
   box-shadow: 0 3px 3px 0 rgba(#000, 0.2);
   position: relative;
   transition: transform 0.4s;
-  
+
   &:not(.big):hover {
-    transform: scale(1.2);
+    transform: scale(1.3);
   }
 
   @include respond(mobile) {
@@ -37,11 +37,11 @@ $play-button-height-mobile: 35.4vw;
     top: 0;
     left: 0;
     width: 100%;
-    height: calc(100% - 0.9rem);
+    height: calc(100% - 0.65rem);
     border-radius: 50%;
 
     @include respond(mobile) {
-      height: calc(100% - 0.59rem);
+      height: calc(100% - 0.43rem);
     }
   }
 
@@ -69,8 +69,8 @@ $play-button-height-mobile: 35.4vw;
     height: 30rem;
 
     @include respond(mobile-land) {
-      width: $play-button-width-mobile;
-      height: $play-button-height-mobile;
+      width: 34.5vw;
+      height: 35.4vw;
     }
 
     &::before {
@@ -110,13 +110,29 @@ $play-button-height-mobile: 35.4vw;
     }
   }
 
+  &.lizard {
+    background: #5f37a8;
+
+    &::before {
+      background: $lizard-gradient;
+    }
+  }
+
+  &.spock {
+    background: #2d8dab;
+
+    &::before {
+      background: $spock-gradient;
+    }
+  }
+
   &__inner {
     background: #babfd4;
-    width: 15.2rem;
-    height: 15.2rem;
+    width: 11.1rem;
+    height: 11.1rem;
     position: absolute;
-    top: 2.3rem;
-    left: 2.3rem;
+    top: 1.7rem;
+    left: 1.7rem;
     border-radius: 50%;
     z-index: 1;
 
@@ -131,11 +147,11 @@ $play-button-height-mobile: 35.4vw;
       bottom: 0;
       border-radius: 50%;
       width: 100%;
-      height: calc(100% - 0.9rem);
+      height: calc(100% - 0.58rem);
       background: linear-gradient(to top, #dadada, #f3f3f3);
 
       @include respond(mobile) {
-        height: calc(100% - 0.52rem);
+        height: calc(100% - 0.38rem);
       }
     }
   }
@@ -147,7 +163,10 @@ $play-button-height-mobile: 35.4vw;
     left: 3.4rem;
 
     @include respond(mobile-land) {
-      @include mobileInnerDimensions;
+      top: 11.3%;
+      left: 11.6%;
+      width: calc(35.4vw * 75 / 100);
+      height: calc(35.4vw * 75 / 100);
     }
 
     &::before {
@@ -161,7 +180,7 @@ $play-button-height-mobile: 35.4vw;
 
   &__icon {
     @include absCenter;
-    height: 8rem;
+    height: 5.8rem;
     z-index: 1;
 
     @include respond(mobile) {
@@ -170,10 +189,18 @@ $play-button-height-mobile: 35.4vw;
   }
 
   &.rock &__icon {
-    height: 6.4rem;
+    height: 4.7rem;
 
     @include respond(mobile) {
       height: 42.1%;
+    }
+  }
+
+  &.lizard &__icon {
+    height: 6rem;
+
+    @include respond(mobile) {
+      height: 54.1%;
     }
   }
 

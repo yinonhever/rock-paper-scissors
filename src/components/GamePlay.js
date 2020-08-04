@@ -39,11 +39,11 @@ const GamePlay = props => {
                 setColumnMargin(showResult ? "17.6rem" : "3.65rem");
             }
             else {
-                if (window.innerWidth <= 750) {
-                    setColumnMargin(0);
+                if (window.innerWidth > 750) {
+                    setColumnMargin("2.95rem");
                 }
                 else {
-                    setColumnMargin("2.95rem");
+                    setColumnMargin(0);
                 }
             }
         }
